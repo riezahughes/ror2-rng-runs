@@ -1,22 +1,24 @@
-require('dotenv').config()
+require('dotenv').config();
 
 // include json files
+const express = require('express');
+
 const artifacts = require('./resources/artifacts.json');
 const characters = require('./resources/characters.json');
 
-const express = require('express')
-const app = express()
+const app = express();
 const port = process.env.PORT;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello World!');
+});
 
 app.post('/roll', (req, res) => {
-    // request items will be broken down for each individual artifact, then rng will pick from the character and/or artifact list and return a result.
-    /*
+  /*
+  request items will be broken down for each individual artifact,
+  rng will pick from the character and/or artifact list and return a result.
 
-    example request: 
+    example request:
 
     {
         artifacts: [
@@ -30,12 +32,10 @@ app.post('/roll', (req, res) => {
         ]
     }
 
-    */
-
-    
-    res.send('posted!')
+  */
+  res.send('posted!');
 });
 
 app.listen(port, () => {
-  console.log(`There are ${artifacts.length} Artifacts and ${characters.length} characters ready to pick from. Running on port ${port}`)
-})
+  console.log(`There are ${artifacts.length} Artifacts and ${characters.length} characters ready to pick from. Running on port ${port}`);
+});
