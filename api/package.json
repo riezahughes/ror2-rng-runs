@@ -1,0 +1,23 @@
+{
+  "name": "ror2-rng-api",
+  "version": "1.0.0",
+  "description": "A risk of rain 2 rng thing where you can roll for the kind of run you'll be doing.",
+  "main": "/src/server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riezahughes/ror2-rng-runs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riezahughes/ror2-rng-runs/issues"
+  },
+  "homepage": "https://github.com/riezahughes/ror2-rng-runs#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}

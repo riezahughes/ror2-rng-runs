@@ -1,3 +1,66 @@
 [
-    ""
+    {
+        "name": "chaos",
+        "emoji": ":ror2_chaos:"
+    },
+    {
+        "name": "command",
+        "emoji": ":ror2_command:"        
+    },
+    {
+        "name": "death",
+        "emoji": ":ror2_death:"
+    },
+    {
+        "name": "dissonance",
+        "emoji": ":ror2_dissonance:"
+    },
+    {
+        "name": "enigma",
+        "emoji": ":ror2_enigma:"
+    },
+    {
+        "name": "evolution",
+        "emoji": ":ror2_evolution:"
+    },
+    {
+        "name": "frailty",
+        "emoji": ":ror2_frailty:"
+    },
+    {
+        "name": "glass",
+        "emoji": ":ror2_glass:"
+    },
+    {
+        "name": "honor",
+        "emoji": ":ror2_honor:"
+    },
+    {
+        "name": "kin",
+        "emoji": ":ror2_kin:"
+    },
+    {
+        "name": "metamorphosis",
+        "emoji": ":ror2_metamorphosis:"
+    },
+    {
+        "name": "sacrifice",
+        "emoji": ":ror2_sacrifice:"
+    },
+    {
+        "name": "soul",
+        "emoji": ":ror2_soul:"
+    },
+    {
+        "name": "spite",
+        "emoji": ":ror2_spite:"
+    },
+    {
+        "name": "swarms",
+        "emoji": ":ror2_swarms:"
+    },
+    {
+        "name": "vengeance",
+        "emoji": ":ror2_vengeance:"
+    }
 ]
