@@ -18,8 +18,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/roll', jsonParser, (req, res) => {
-  console.log(req.body.action);
-  console.log(req.body.filters.artifacts);
   if (req.body.action !== 'roll') {
     res.send(
       {
