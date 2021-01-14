@@ -8,10 +8,12 @@
     overflow: visible;
     margin-bottom: 10px;
     cursor: pointer;
+    opacity: 0.5
 }
 
 .selected{
     border: 2px solid #B5AD7C;
+    opacity: 1;
 }
 
 .portraitInnerContainer{

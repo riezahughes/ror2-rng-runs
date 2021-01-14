@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
 
 import Portrait from './characters/Portrait';
+import CommandoPortrait from './characters/portraits/commando.png'
 
 
 const App = () => {
@@ -47,7 +48,7 @@ const App = () => {
         style={{ maxWidth: '800px'}}
         >
           <Grid item xs={0}>
-            <Portrait name="commando" image="" value="commando" key={filteredCharacters.commando} filtered={filteredCharacters.commando} setFilter={setFilter}/>
+            <Portrait name="commando" image={CommandoPortrait} value="commando" key={filteredCharacters.commando} filtered={filteredCharacters.commando} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
             <Portrait name="huntress" image="" value="huntress" key={filteredCharacters.huntress} filtered={filteredCharacters.huntress} setFilter={setFilter}/>

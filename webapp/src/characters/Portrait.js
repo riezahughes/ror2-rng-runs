@@ -5,7 +5,7 @@ const Portrait = (props) => {
         return(
         <div className="portraitContainer selected" onClick={(e) => {props.setFilter(props.value)}}>
             <div className="portraitInnerContainer">
-
+                <img src={props.image}/>
             </div>
             <div className="portraitSelect">
                 <div className="portraitSelectInner">
@@ -18,7 +18,7 @@ const Portrait = (props) => {
         return(
             <div className="portraitContainer" onClick={(e) => {props.setFilter(props.value)}}>
                 <div className="portraitInnerContainer">
-    
+                    <img src={props.image}/>
                 </div>
             </div>
             )
