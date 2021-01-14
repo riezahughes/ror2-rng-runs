@@ -1,6 +1,6 @@
 import './Portrait.css';
 
-function Portrait(props) {
+const Portrait = (props) => {
     if(!props.filtered){
         return(
         <div className="portraitContainer selected" onClick={(e) => {props.setFilter(props.value)}}>

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 import Portrait from './characters/Portrait';
 
 
-function App() {
+const App = () => {
   const [playerValue, setPlayerValue] = useState(0);
   const [artifactValue, setArtifactValue] = useState(16);
   const [filteredCharacters, setFilteredCharacters] = useState(
@@ -29,16 +29,11 @@ function App() {
   const [filteredArtifacts, setFilteredArtifacts] = useState([]);
 
   const setFilter = (character) => {
-    console.log(`flipping ${character}. Currently ${filteredCharacters[character]}`);
 
-    const filterCopy = filteredCharacters;
-
-    if(filterCopy[character] === false){
-      filterCopy[character] = true;
-    }else{
-      filterCopy[character] = false;
-    }
-    console.log(`set to ${filterCopy[character]}`)
+    const filterCopy = {...filteredCharacters};
+    console.log(`was: ${filteredCharacters[character]}`)
+    filterCopy[character] = !filterCopy[character]
+    console.log(`Now: ${filterCopy[character]}`);
     setFilteredCharacters(filterCopy);
   }
 
