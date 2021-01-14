@@ -7,7 +7,17 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
 
 import Portrait from './characters/Portrait';
+
 import CommandoPortrait from './characters/portraits/commando.png'
+import HuntressPortrait from './characters/portraits/huntress.png'
+import MultiPortrait from './characters/portraits/multi.png'
+import EngineerPortrait from './characters/portraits/engineer.png'
+import ArtificerPortrait from './characters/portraits/artificer.png'
+import MercenaryPortrait from './characters/portraits/mercenary.png'
+import RexPortrait from './characters/portraits/rex.png'
+import LoaderPortrait from './characters/portraits/loader.png'
+import AcridPortrait from './characters/portraits/acrid.png'
+import CaptainPortrait from './characters/portraits/captain.png'
 
 
 const App = () => {
@@ -51,31 +61,31 @@ const App = () => {
             <Portrait name="commando" image={CommandoPortrait} value="commando" key={filteredCharacters.commando} filtered={filteredCharacters.commando} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="huntress" image="" value="huntress" key={filteredCharacters.huntress} filtered={filteredCharacters.huntress} setFilter={setFilter}/>
+            <Portrait name="huntress" image={HuntressPortrait} value="huntress" key={filteredCharacters.huntress} filtered={filteredCharacters.huntress} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="mult"  image="" value="mult" key={filteredCharacters.mult} filtered={filteredCharacters.mult} setFilter={setFilter}/>
+            <Portrait name="mult"  image={MultiPortrait} value="mult" key={filteredCharacters.mult} filtered={filteredCharacters.mult} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="engineer" image="" value="engineer" key={filteredCharacters.engineer} filtered={filteredCharacters.engineer} setFilter={setFilter}/>
+            <Portrait name="engineer" image={EngineerPortrait} value="engineer" key={filteredCharacters.engineer} filtered={filteredCharacters.engineer} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="artificer" image="" value="artificer" key={filteredCharacters.artificer} filtered={filteredCharacters.artificer} setFilter={setFilter}/>
+            <Portrait name="artificer" image={ArtificerPortrait} value="artificer" key={filteredCharacters.artificer} filtered={filteredCharacters.artificer} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="mercenary" image="" value="mercenary" key={filteredCharacters.mercenary} filtered={filteredCharacters.mercenary} setFilter={setFilter}/>
+            <Portrait name="mercenary" image={MercenaryPortrait} value="mercenary" key={filteredCharacters.mercenary} filtered={filteredCharacters.mercenary} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="rex" image="" value="rex" key={filteredCharacters.rex} filtered={filteredCharacters.rex} setFilter={setFilter}/>
+            <Portrait name="rex" image={RexPortrait} value="rex" key={filteredCharacters.rex} filtered={filteredCharacters.rex} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="loader"  image="" value="loader" key={filteredCharacters.loader} filtered={filteredCharacters.loader} setFilter={setFilter}/>
+            <Portrait name="loader"  image={LoaderPortrait} value="loader" key={filteredCharacters.loader} filtered={filteredCharacters.loader} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="acrid" image="" value="acrid" key={filteredCharacters.acrid} filtered={filteredCharacters.acrid} setFilter={setFilter}/>
+            <Portrait name="acrid" image={AcridPortrait} value="acrid" key={filteredCharacters.acrid} filtered={filteredCharacters.acrid} setFilter={setFilter}/>
           </Grid>
           <Grid item xs={0}>
-            <Portrait name="captain" image="" value="captain" key={filteredCharacters.captain} filtered={filteredCharacters.captain} setFilter={setFilter}/>
+            <Portrait name="captain" image={CaptainPortrait} value="captain" key={filteredCharacters.captain} filtered={filteredCharacters.captain} setFilter={setFilter}/>
           </Grid>      
       </Grid>
       <Button

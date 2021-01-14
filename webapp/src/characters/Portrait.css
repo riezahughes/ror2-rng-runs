@@ -41,3 +41,7 @@
     height: 80%;
     border: 1px solid #555555;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
