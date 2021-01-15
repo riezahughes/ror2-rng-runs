@@ -1,0 +1,31 @@
+.tooltipHover{
+    width: 300px;
+    position: absolute;
+    z-index: 10;
+    border: 1px solid #eeeeee;
+}
+
+.tooltipTitleContainer{
+    background: #636363;
+    color: white;
+    padding: 10px;
+}
+
+.tooltipTitleContainer h3{
+    font-size: 1em;
+    margin: 0;
+}
+
+.tooltipDescriptionContainer{
+    background: rgba('220, 220, 220, 0.3');
+    padding: 10px;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+
+.tooltipDescriptionContainer p{
+    font-weight: bold;
+    font-size: 0.8em;
+    margin: 0;
+}
