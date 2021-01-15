@@ -10,6 +10,7 @@ import Slider from '@material-ui/core/Slider';
 import CharacterPortrait from './characters/Portrait';
 import ArtifactPortrait from './artifacts/Portrait';
 import Tooltip from './tooltip/Tooltip';
+import StartButton from './startButton/StartButton'
 
 import CommandoPortrait from './characters/portraits/commando.png'
 import HuntressPortrait from './characters/portraits/huntress.png'
@@ -287,13 +288,7 @@ const App = () => {
             </Grid>
         </Grid>
       </div>
-      <Button
-      color="primary"
-      variant="contained"
-      style={{marginTop: '20px'}}
-      >
-        Generate a Run
-      </Button>      
+      <StartButton />  
     </div>
   );
 }

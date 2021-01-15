@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+
+.startButton{
+    color: white;
+    background: #3B9720 no-repeat;
+    border: none;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2em;
+    text-shadow: 2px 2px 0px #000000;
+    cursor: pointer;
+    border-style: inset;
+    border-color: #3B9720;
+    margin-top: 10px;
+    width: 250px;
+}
+
+.startButton:hover{
+    background: #5bc23b no-repeat;
+}

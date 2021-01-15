@@ -7,6 +7,7 @@ Pretty simple premise. Just takes the number of players involved and picks artif
 - [ ] Refactor API app so it's less convoluded in places and reads better.
 - [ ] Write Documentation for the single rest call.
 - [ ] Start working on a simple frontend to display the data.
+- [ ] Add skills to frontend to choose between them as well.
 - [ ] Start working on a discord bot to display the data.
 - [ ] Dockerize the lot of this.
 - [ ] Native app for this maybe? Idk. It's been a while since i've done one.
