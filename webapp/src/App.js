@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
+import Slider from '@material-ui/core/Slider';
 
 import CharacterPortrait from './characters/Portrait';
 import ArtifactPortrait from './artifacts/Portrait';
@@ -40,11 +41,9 @@ import VengeancePortrait from './artifacts/portraits/vengeance.png'
 
 
 const App = () => {
-  const [playerValue, setPlayerValue] = useState(0);
-  const [artifactValue, setArtifactValue] = useState(16);
 
   const [limits, setLimits] = useState({
-    artifactLimit: 16,
+    artifactLimit: 3,
     characterLimit: 2
   })
 
@@ -133,6 +132,7 @@ const App = () => {
     setFilteredArtifacts(filterCopy);
   };
 
+
   return (
 
     <div
@@ -145,6 +145,50 @@ const App = () => {
           mouseX={tooltipPosition.mouseX}
           mouseY={tooltipPosition.mouseY}
         />
+        <h3>RNG Limits:</h3>
+        <Grid
+        container
+        spacing={10}
+        alignItems="center"
+        justify="center"
+        style={{ maxWidth: '800px'}}
+        >
+          <Grid item xs={0}>
+            <p>Number of Artifacts:</p>
+            <Slider
+              value={limits.artifactLimit}
+              valueLabelDisplay="auto"
+              marks
+              step={1}
+              min={1}
+              max={16}
+              onChange={(_, value) =>
+                setLimits({
+                  characterLimit: limits.characterLimit,
+                  artifactLimit: value
+                })
+             }
+            />    
+          </Grid>
+
+          <Grid item xs={0}>
+            <p>Number of Players:</p>
+            <Slider
+              value={limits.characterLimit}
+              valueLabelDisplay="auto"
+              marks
+              step={1}
+              min={1}
+              max={4}
+              onChange={(_, value) =>
+                setLimits({
+                  characterLimit: value,
+                  artifactLimit: limits.artifactLimit
+                })
+             }          
+            />
+          </Grid>       
+        </Grid>        
         <h3>Characters in Pool:</h3>
         <Grid
         container
