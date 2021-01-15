@@ -1,4 +1,4 @@
-.portraitContainer{
+.characterPortraitContainer{
     background: #111111;
     border: 2px solid transparent;
     padding: 3px;
@@ -11,19 +11,19 @@
     opacity: 0.5
 }
 
-.selected{
+.characterSelected{
     border: 2px solid #B5AD7C;
     opacity: 1;
 }
 
-.portraitInnerContainer{
+.characterPortraitInnerContainer{
     background: #2E2526;
     border: 2px solid #777777;
     margin: 2px;
     height: 72px;
     width: 72px;
 }
-.portraitSelect{
+.characterPortraitSelect{
     position: absolute;
     bottom: -10px;
     left: 40%;
@@ -36,7 +36,7 @@
     background-color: #B5AD7C;
     transform: rotate(45deg);
 }
-.portraitSelectInner{
+.characterPortraitSelectInner{
     width: 80%;
     height: 80%;
     border: 1px solid #555555;

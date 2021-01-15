@@ -1,0 +1,17 @@
+.artifactPortraitContainer{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+    opacity: 0.5
+}
+
+.artifactSelected{
+    opacity: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

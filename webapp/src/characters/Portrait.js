@@ -1,14 +1,14 @@
 import './Portrait.css';
 
-const Portrait = (props) => {
+const CharacterPortrait = (props) => {
     if(!props.filtered){
         return(
-        <div className="portraitContainer selected" onClick={(e) => {props.setFilter(props.value)}}>
-            <div className="portraitInnerContainer">
+        <div className="characterPortraitContainer characterSelected" onClick={(e) => {props.setFilter(props.value)}}>
+            <div className="characterPortraitInnerContainer">
                 <img src={props.image}/>
             </div>
-            <div className="portraitSelect">
-                <div className="portraitSelectInner">
+            <div className="characterPortraitSelect">
+                <div className="characterPortraitSelectInner">
 
                 </div>
             </div>
@@ -16,8 +16,8 @@ const Portrait = (props) => {
         )
     }else{
         return(
-            <div className="portraitContainer" onClick={(e) => {props.setFilter(props.value)}}>
-                <div className="portraitInnerContainer">
+            <div className="characterPortraitContainer" onClick={(e) => {props.setFilter(props.value)}}>
+                <div className="characterPortraitInnerContainer">
                     <img src={props.image}/>
                 </div>
             </div>
@@ -25,4 +25,4 @@ const Portrait = (props) => {
     }
 }
 
-export default Portrait;
+export default CharacterPortrait;
