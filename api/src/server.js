@@ -4,8 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const artifacts = require('./resources/artifacts.json');
-const characters = require('./resources/characters.json');
+const jsonArtifacts = require('./resources/artifacts.json');
+const jsonCharacters = require('./resources/characters.json');
 
 const app = express();
 
@@ -26,32 +26,49 @@ app.post('/roll', jsonParser, (req, res) => {
       },
     ).status(422);
   } else {
+    const {
+      artifactLimit, characterLimit, artifacts, characters,
+    } = req.body.filters;
+
     // run a map on the full artifact json and then filter to remove the results we don't need.
-    const filteredArtifactsResult = artifacts.map((artifact) => {
-      if (req.body.filters.artifacts && !req.body.filters.artifacts.includes(artifact.name)) {
+    const filteredArtifactsResult = jsonArtifacts.map((artifact) => {
+      if (artifacts && !artifacts.includes(artifact.name)) {
         return (artifact);
       }
     }).filter((e) => e);
 
-    const filteredCharactersResult = characters.map((character) => {
-      if (req.body.filters.characters && !req.body.filters.characters.includes(character.name.toLowerCase())) {
+    const filteredCharactersResult = jsonCharacters.map((character) => {
+      if (characters && !characters.includes(character.name.toLowerCase())) {
         return (character);
       }
     }).filter((e) => e);
 
     let artifactFinalResult;
 
-    if (req.body.filters.artifactLimit && req.body.filters.artifactLimit <= 16 && req.body.filters.artifactLimit > 0) {
-      const { artifactLimit } = req.body.filters;
+    if (artifactLimit && artifactLimit <= 16 && artifactLimit > 0) {
+      let artifactFinalLimit;
+      const breakPoint = 16 - artifacts.length;
+
+      if (artifactLimit > breakPoint) {
+        artifactFinalLimit = breakPoint;
+      } else {
+        artifactFinalLimit = artifactLimit;
+      }
+      console.log(`length: ${breakPoint}`);
+      console.log(`limit: ${artifactLimit}`);
+      console.log(artifactFinalLimit);
+
       const artifactArray = [];
-      while (artifactArray.length !== artifactLimit) {
+
+      while (artifactArray.length !== artifactFinalLimit) {
         const choice = Math.floor(Math.random() * Math.floor(filteredArtifactsResult.length));
         if (!artifactArray.includes(filteredArtifactsResult[choice])) {
-          console.log(`Number: ${choice}`);
-          console.log(`pushing ${filteredArtifactsResult[choice].name}`);
+          // console.log(`Number: ${choice}`);
+          // console.log(`pushing ${filteredArtifactsResult[choice].name}`);
           artifactArray.push(filteredArtifactsResult[choice]);
         }
       }
+      console.log(artifactArray);
       artifactFinalResult = artifactArray;
     } else {
       artifactFinalResult = filteredArtifactsResult;
@@ -59,8 +76,7 @@ app.post('/roll', jsonParser, (req, res) => {
 
     let characterFinalResult;
 
-    if (req.body.filters.characterLimit && filteredCharactersResult.length !== 0 && req.body.filters.characterLimit <= 4 && req.body.filters.characterLimit > 0) {
-      const { characterLimit } = req.body.filters;
+    if (characterLimit && filteredCharactersResult.length !== 0 && characterLimit <= 4 && characterLimit > 0) {
       const characterArray = [];
       while (characterArray.length !== characterLimit) {
         const choice = Math.floor(Math.random() * Math.floor(filteredCharactersResult.length));
@@ -87,5 +103,5 @@ app.post('/roll', jsonParser, (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`There are ${artifacts.length} Artifacts and ${characters.length} characters ready to pick from. Running on port ${port}`);
+  console.log(`There are ${jsonArtifacts.length} Artifacts and ${jsonCharacters.length} characters ready to pick from. Running on port ${port}`);
 });
