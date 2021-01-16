@@ -2,7 +2,7 @@ import './StartButton.css';
 
 const StartButton = (props) => {
     return(
-        <button class="startButton">Generate</button>
+        <button onClick={props.onClick} class="startButton">Generate</button>
     )
 }
 

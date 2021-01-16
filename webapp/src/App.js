@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
@@ -43,6 +44,99 @@ import VengeancePortrait from './artifacts/portraits/vengeance.png'
 
 const App = () => {
 
+  // const [modalView, setModalView] = useState(false);
+
+  const [results, setResults] = useState("");
+
+  const rngTime = () => {
+    //localhost:9001
+
+    /*
+
+    {
+    "action": "roll",
+    "filters": 
+      {
+      "artifactLimit": 5,
+      "artifacts": [
+          "chaos",
+          "command"
+      ],
+      "characterLimit": 1,
+      "characters": [
+        "loader"
+      ]
+      }
+    }
+    */
+
+
+  // const jsonCharacterArray = Object.keys(filteredCharacters)
+  // .some(
+  //   (key) => {
+  //     return filteredCharacters[key] === true;
+  //   }
+  // );
+
+  // console.log(jsonCharacterArray);
+
+  // const jsonArtifactArray = Object.keys(filteredArtifacts)
+  // .some(
+  //   (key) => {
+  //     return filteredArtifacts[key] === true;
+  //   }
+  // );
+
+  var characterKeys = Object.keys(filteredCharacters);
+
+  const jsonCharacterArray = characterKeys.filter(function(key) {
+      return filteredCharacters[key]
+  });
+
+  var artifactKeys = Object.keys(filteredArtifacts);
+
+  const jsonArtifactArray = artifactKeys.filter(function(key) {
+      return filteredArtifacts[key]
+  });
+
+  console.log(jsonArtifactArray);
+
+   axios.post(
+     'http://localhost:9001/roll', 
+     {
+      action: "roll",
+      filters: {
+        artifactLimit: limits.artifactLimit,
+        characterLimit: limits.characterLimit,
+        artifacts: jsonArtifactArray,
+        characters: jsonCharacterArray
+      }
+     }
+   ).then((data) => {
+     let resultString;
+    if(data.data.status == "success"){
+
+      let artifactString = "";
+      let characterString = "";
+
+      for(let x = 0; x < data.data.results.artifacts.length; x++){
+        artifactString += `${data.data.results.artifacts[x].name}, `
+      }
+
+      for(let x = 0; x < data.data.results.characters.length; x++){
+        characterString += `${data.data.results.characters[x].name}, `
+      }      
+
+      resultString = `YOUR RUN: ${data.data.results.artifacts.length} artifacts (${artifactString}) using ${characterString}`;
+    }else{
+      resultString = "Oops. Small Problem.";
+    }
+      setResults(resultString);
+   });
+  }
+
+
+
   const [limits, setLimits] = useState({
     artifactLimit: 3,
     characterLimit: 2
@@ -52,7 +146,7 @@ const App = () => {
     {
       commando: false,
       huntress: false,
-      mult: true,
+      mult: false,
       engineer: false,
       artificer: false,
       mercenary: false,
@@ -137,6 +231,7 @@ const App = () => {
   return (
 
     <div
+      className="mainContainer"
       onMouseMove={updateTooltipPosition}
     >
         <Tooltip
@@ -149,12 +244,12 @@ const App = () => {
         <h3>RNG Limits:</h3>
         <Grid
         container
-        spacing={10}
+        spacing={0}
         alignItems="center"
         justify="center"
-        style={{ maxWidth: '800px'}}
         >
           <Grid item xs={0}>
+            <div className="sliderContainer">
             <p>Number of Artifacts:</p>
             <Slider
               value={limits.artifactLimit}
@@ -169,10 +264,12 @@ const App = () => {
                   artifactLimit: value
                 })
              }
-            />    
+            />   
+            </div> 
           </Grid>
 
           <Grid item xs={0}>
+          <div className="sliderContainer">
             <p>Number of Players:</p>
             <Slider
               value={limits.characterLimit}
@@ -188,15 +285,15 @@ const App = () => {
                 })
              }          
             />
+            </div>
           </Grid>       
         </Grid>        
         <h3>Characters in Pool:</h3>
         <Grid
         container
-        spacing={1}
+        spacing={0}
         alignItems="center"
         justify="center"
-        style={{ maxWidth: '800px'}}
         >
           <Grid item xs={0}>
             <CharacterPortrait name="commando" image={CommandoPortrait} value="commando" key={filteredCharacters.commando} filtered={filteredCharacters.commando} setFilter={changeCharacterFilter}/>
@@ -236,7 +333,6 @@ const App = () => {
           spacing={1}
           alignItems="center"
           justify="center"
-          style={{ maxWidth: '800px'}}
           >
             <Grid item xs={0}>
               <ArtifactPortrait image={ChaosPortrait} value="chaos" filtered={filteredArtifacts.chaos} setFilter={changeArtifactFilter} title="Artifact of Chaos" description="Friendly fire is enabled for both survivors and monsters alike." mouseIn={showTooltip} mouseOut={hideTooltip}/>
@@ -288,7 +384,8 @@ const App = () => {
             </Grid>
         </Grid>
       </div>
-      <StartButton />  
+      <StartButton onClick={rngTime}/>
+      <div id="results">{results}</div>
     </div>
   );
 }

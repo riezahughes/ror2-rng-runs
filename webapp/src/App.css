@@ -2,4 +2,15 @@
     padding: 10px;
     border: 2px solid #555555;
     max-width: 800px;
+    margin: 10px auto;
+}
+
+.mainContainer{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sliderContainer{
+    margin-right: 50px;
+    margin-left: 50px;
 }
