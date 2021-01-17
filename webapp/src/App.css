@@ -1,13 +1,19 @@
 .artifactContainer {
     padding: 10px;
     border: 2px solid #555555;
+    width: 80%;
     max-width: 800px;
     margin: 10px auto;
 }
 
 .mainContainer{
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
+    border: 1px solid #cdcdcd;
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.3);
+    max-width: 850px;
+    padding: 10px;
 }
 
 .sliderContainer{
