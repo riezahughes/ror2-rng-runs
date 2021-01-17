@@ -41,6 +41,7 @@ import SpitePortrait from './artifacts/portraits/spite.png'
 import SwarmsPortrait from './artifacts/portraits/swarms.png'
 import VengeancePortrait from './artifacts/portraits/vengeance.png'
 
+require('dotenv').config()
 
 const App = () => {
 
@@ -64,8 +65,10 @@ const App = () => {
 
   console.log(jsonArtifactArray);
 
+  console.log(process.env.REACT_APP_API_URL);
+
    axios.post(
-     `${process.env.API_URL}/roll`, 
+     `${process.env.REACT_APP_API_URL}/roll`, 
      {
       action: "roll",
       filters: {
