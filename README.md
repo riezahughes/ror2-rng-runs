@@ -2,6 +2,11 @@
 
 Pretty simple premise. Just takes the number of players involved and picks artifacts for you. Really simple API. For use in a bit of everything.
 
+Available at: (riskofpain.co.uk)[http://riskofpain.co.uk]
+
+frontend: Netlify
+backend: nginx
+
 ## TO DO:
 
 - [ ] Refactor API app so it's less convoluded in places and reads better.
