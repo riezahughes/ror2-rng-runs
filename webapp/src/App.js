@@ -49,43 +49,6 @@ const App = () => {
   const [results, setResults] = useState("");
 
   const rngTime = () => {
-    //localhost:9001
-
-    /*
-
-    {
-    "action": "roll",
-    "filters": 
-      {
-      "artifactLimit": 5,
-      "artifacts": [
-          "chaos",
-          "command"
-      ],
-      "characterLimit": 1,
-      "characters": [
-        "loader"
-      ]
-      }
-    }
-    */
-
-
-  // const jsonCharacterArray = Object.keys(filteredCharacters)
-  // .some(
-  //   (key) => {
-  //     return filteredCharacters[key] === true;
-  //   }
-  // );
-
-  // console.log(jsonCharacterArray);
-
-  // const jsonArtifactArray = Object.keys(filteredArtifacts)
-  // .some(
-  //   (key) => {
-  //     return filteredArtifacts[key] === true;
-  //   }
-  // );
 
   var characterKeys = Object.keys(filteredCharacters);
 
@@ -102,7 +65,7 @@ const App = () => {
   console.log(jsonArtifactArray);
 
    axios.post(
-     'http://localhost:9001/roll', 
+     `${process.env.API_URL}/roll`, 
      {
       action: "roll",
       filters: {
