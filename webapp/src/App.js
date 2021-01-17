@@ -190,7 +190,7 @@ const App = () => {
   const updateTooltipPosition = (e) => {
     setTooltipPosition({
       mouseX: e.clientX,
-      mouseY: e.clientY
+      mouseY: e.clientY,
     })
   }
 
@@ -229,19 +229,20 @@ const App = () => {
 
 
   return (
-
+    <div>
+    <Tooltip
+    title={tooltip.title}
+    description={tooltip.description}
+    display={tooltip.display}
+    mouseX={tooltipPosition.mouseX}
+    mouseY={tooltipPosition.mouseY}
+  />
     <div
       className="mainContainer"
       onMouseMove={updateTooltipPosition}
     >
-        <Tooltip
-          title={tooltip.title}
-          description={tooltip.description}
-          display={tooltip.display}
-          mouseX={tooltipPosition.mouseX}
-          mouseY={tooltipPosition.mouseY}
-        />
-        <h3>RNG Limits:</h3>
+
+        {/* <h3>RNG Limits:</h3>
         <Grid
         container
         spacing={0}
@@ -287,7 +288,7 @@ const App = () => {
             />
             </div>
           </Grid>       
-        </Grid>        
+        </Grid>         */}
         <h3>Characters in Pool:</h3>
         <Grid
         container
@@ -386,6 +387,7 @@ const App = () => {
       </div>
       <StartButton onClick={rngTime}/>
       <div id="results">{results}</div>
+    </div>
     </div>
   );
 }
