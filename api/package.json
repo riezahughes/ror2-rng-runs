@@ -2,8 +2,9 @@
   "name": "ror2-rng-api",
   "version": "1.0.0",
   "description": "A risk of rain 2 rng thing where you can roll for the kind of run you'll be doing.",
-  "main": "/src/server.js",
+  "main": "./src/server.js",
   "scripts": {
+    "start": "./src/server.js",
     "test": "jest"
   },
   "repository": {
