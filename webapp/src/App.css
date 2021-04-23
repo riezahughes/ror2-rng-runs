@@ -1,22 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap");
+
+body {
+  font-family: "Rajdhani", sans-serif;
+}
 .artifactContainer {
-    padding: 10px;
-    border: 2px solid #555555;
-    width: 80%;
-    max-width: 800px;
-    margin: 10px auto;
+  padding: 10px;
+  border: 2px solid #555555;
+  width: 80%;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
-.mainContainer{
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid #cdcdcd;
-    backdrop-filter: blur(2px);
-    background: rgba(0,0,0,0.3);
-    max-width: 850px;
-    padding: 10px;
+.mainContainer {
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.3);
+  max-width: 850px;
+  padding: 10px;
 }
 
-.sliderContainer{
-    margin-right: 50px;
-    margin-left: 50px;
+.sliderContainer {
+  margin-right: 50px;
+  margin-left: 50px;
 }
