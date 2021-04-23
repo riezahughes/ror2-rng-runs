@@ -1,223 +1,106 @@
 [
-    {
-        "name": "Commando",
-        "primary": [
-            "Double Tap"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Phase Round",
-            "Phase Blast"
-        ],
-        "utility": [
-            "Tactical Dive",
-            "Tactical Slide"
-        ],
-        "special": [
-            "Suppressive Fire",
-            "Frag Grenade"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Huntress",
-        "primary": [
-            "Strafe",
-            "Flurry"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Laser Glaive"
-        ],
-        "utility": [
-            "Blink",
-            "Phase Blink"
-        ],
-        "special": [
-            "Arrow Rain",
-            "Ballista"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "MulT",
-        "primary": [
-            "Auto-Nailgun",
-            "Rebar Puncher",
-            "Scrap Launcher",
-            "Power Saw"
-        ],
-        "pqty": 2,
-        "secondary": [
-            "Blast Canister"
-        ],
-        "utility": [
-            "Transport Mode",
-            "Phase Blink"
-        ],
-        "special": [
-            "Retool"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Engineer",
-        "primary": [
-            "Bouncing Grenades"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Pressure Mines",
-            "Spider Mines"
-        ],
-        "utility": [
-            "Bubble Shield",
-            "Thermal Harpoons"
-        ],
-        "special": [
-            "TR12 Gauss Auto-Turret",
-            "TR58 Carbonizer Turret"
-        ],
-        "misc": [
-
-        ]        
-    },
-    {
-        "name": "Artificer",
-        "primary": [
-            "Flame Bolt",
-            "Plasma Bolt"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Charged Nano-Bomb",
-            "Cast Nano-Spear"
-        ],
-        "utility": [
-            "Snapfreeze"
-        ],
-        "special": [
-            "Flamethrower",
-            "Ion Surge"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Mercenary",
-        "primary": [
-            "Laser Sword"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Whirlwind",
-            "Rising Thunder"
-        ],
-        "utility": [
-            "Blinding Assault"
-        ],
-        "special": [
-            "Eviscerate",
-            "Slicing Winds"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Rex",
-        "primary": [
-            "Inject"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Seed Barrage",
-            "Directive: Drill"
-        ],
-        "utility": [
-            "Directive: Disperse",
-            "Bramble Volley"
-        ],
-        "special": [
-            "Tangling Growth"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Loader",
-        "primary": [
-            "Knuckleboom"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Grapple Fist",
-            "Spiked Fist"
-        ],
-        "utility": [
-            "Charged Gauntlet",
-            "Thunder Gauntlet"
-        ],
-        "special": [
-            "M551 Pylon"
-        ],
-        "misc": [
-
-        ]
-    },
-    {
-        "name": "Acrid",
-        "primary": [
-            "Vicious Wounds"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Neurotoxin",
-            "Ravenous Bite"
-        ],
-        "utility": [
-            "Caustic Leap",
-            "Frenzied Leap"
-        ],
-        "special": [
-            "Epidemic"
-        ],
-        "misc": [
-            "Poison",
-            "Blight"
-        ]
-    },
-    {
-        "name": "Captain",
-        "primary": [
-            "Vulcan Shotgun"
-        ],
-        "pqty": 1,
-        "secondary": [
-            "Power Tazer"
-        ],
-        "utility": [
-            "Orbital Probe"
-        ],
-        "special": [
-            "Orbital Supply Beacon"
-        ],
-        "misc": [
-            "Beacon: Healing",
-            "Beacon: Shocking",
-            "Beacon: Resupply",
-            "Beacon: Hacking"
-        ]
-    }
-
-
-
+  {
+    "name": "Commando",
+    "primary": ["Double Tap"],
+    "pqty": 1,
+    "secondary": ["Phase Round", "Phase Blast"],
+    "utility": ["Tactical Dive", "Tactical Slide"],
+    "special": ["Suppressive Fire", "Frag Grenade"],
+    "misc": []
+  },
+  {
+    "name": "Huntress",
+    "primary": ["Strafe", "Flurry"],
+    "pqty": 1,
+    "secondary": ["Laser Glaive"],
+    "utility": ["Blink", "Phase Blink"],
+    "special": ["Arrow Rain", "Ballista"],
+    "misc": []
+  },
+  {
+    "name": "MulT",
+    "primary": ["Auto-Nailgun", "Rebar Puncher", "Scrap Launcher", "Power Saw"],
+    "pqty": 2,
+    "secondary": ["Blast Canister"],
+    "utility": ["Transport Mode", "Phase Blink"],
+    "special": ["Retool"],
+    "misc": []
+  },
+  {
+    "name": "Engineer",
+    "primary": ["Bouncing Grenades"],
+    "pqty": 1,
+    "secondary": ["Pressure Mines", "Spider Mines"],
+    "utility": ["Bubble Shield", "Thermal Harpoons"],
+    "special": ["TR12 Gauss Auto-Turret", "TR58 Carbonizer Turret"],
+    "misc": []
+  },
+  {
+    "name": "Artificer",
+    "primary": ["Flame Bolt", "Plasma Bolt"],
+    "pqty": 1,
+    "secondary": ["Charged Nano-Bomb", "Cast Nano-Spear"],
+    "utility": ["Snapfreeze"],
+    "special": ["Flamethrower", "Ion Surge"],
+    "misc": []
+  },
+  {
+    "name": "Mercenary",
+    "primary": ["Laser Sword"],
+    "pqty": 1,
+    "secondary": ["Whirlwind", "Rising Thunder"],
+    "utility": ["Blinding Assault"],
+    "special": ["Eviscerate", "Slicing Winds"],
+    "misc": []
+  },
+  {
+    "name": "Rex",
+    "primary": ["Inject"],
+    "pqty": 1,
+    "secondary": ["Seed Barrage", "Directive: Drill"],
+    "utility": ["Directive: Disperse", "Bramble Volley"],
+    "special": ["Tangling Growth"],
+    "misc": []
+  },
+  {
+    "name": "Loader",
+    "primary": ["Knuckleboom"],
+    "pqty": 1,
+    "secondary": ["Grapple Fist", "Spiked Fist"],
+    "utility": ["Charged Gauntlet", "Thunder Gauntlet"],
+    "special": ["M551 Pylon"],
+    "misc": []
+  },
+  {
+    "name": "Acrid",
+    "primary": ["Vicious Wounds"],
+    "pqty": 1,
+    "secondary": ["Neurotoxin", "Ravenous Bite"],
+    "utility": ["Caustic Leap", "Frenzied Leap"],
+    "special": ["Epidemic"],
+    "misc": ["Poison", "Blight"]
+  },
+  {
+    "name": "Captain",
+    "primary": ["Vulcan Shotgun"],
+    "pqty": 1,
+    "secondary": ["Power Tazer"],
+    "utility": ["Orbital Probe"],
+    "special": ["Orbital Supply Beacon"],
+    "misc": [
+      "Beacon: Healing",
+      "Beacon: Shocking",
+      "Beacon: Resupply",
+      "Beacon: Hacking"
+    ]
+  },
+  {
+    "name": "Bandit",
+    "primary": ["Burst", "Blast"],
+    "pqty": 1,
+    "secondary": ["Serrated Dagger", "Serrated Shiv"],
+    "utility": ["Smoke Bomb"],
+    "special": ["Lights Out", "Desperado"],
+    "misc": []
+  }
 ]

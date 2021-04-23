@@ -23,6 +23,7 @@ import RexPortrait from './characters/portraits/rex.png'
 import LoaderPortrait from './characters/portraits/loader.png'
 import AcridPortrait from './characters/portraits/acrid.png'
 import CaptainPortrait from './characters/portraits/captain.png'
+import BanditPortrait from './characters/portraits/bandit.png'
 
 import ChaosPortrait from './artifacts/portraits/chaos.png'
 import CommandPortrait from './artifacts/portraits/command.png'
@@ -101,8 +102,6 @@ const App = () => {
    });
   }
 
-
-
   const [limits, setLimits] = useState({
     artifactLimit: 3,
     characterLimit: 2
@@ -112,6 +111,7 @@ const App = () => {
     {
       commando: false,
       huntress: false,
+      bandit: false,
       mult: false,
       engineer: false,
       artificer: false,
@@ -119,7 +119,7 @@ const App = () => {
       rex: false,
       loader: false,
       acrid: false,
-      captain: false
+      captain: false,
     }
   );
   const [filteredArtifacts, setFilteredArtifacts] = useState(
@@ -269,6 +269,9 @@ const App = () => {
             <CharacterPortrait name="huntress" image={HuntressPortrait} value="huntress" key={filteredCharacters.huntress} filtered={filteredCharacters.huntress} setFilter={changeCharacterFilter}/>
           </Grid>
           <Grid item xs={0}>
+            <CharacterPortrait name="bandit" image={BanditPortrait} value="bandit" key={filteredCharacters.bandit} filtered={filteredCharacters.bandit} setFilter={changeCharacterFilter}/>
+          </Grid>    
+          <Grid item xs={0}>
             <CharacterPortrait name="mult"  image={MultiPortrait} value="mult" key={filteredCharacters.mult} filtered={filteredCharacters.mult} setFilter={changeCharacterFilter}/>
           </Grid>
           <Grid item xs={0}>
@@ -291,7 +294,7 @@ const App = () => {
           </Grid>
           <Grid item xs={0}>
             <CharacterPortrait name="captain" image={CaptainPortrait} value="captain" key={filteredCharacters.captain} filtered={filteredCharacters.captain} setFilter={changeCharacterFilter}/>
-          </Grid>      
+          </Grid>
       </Grid>
       <h3>Artifacts in Pool:</h3>
       <div className="artifactContainer">
