@@ -1,11 +1,8 @@
-require('dotenv').config();
+const express = require("express");
+const bodyParser = require("body-parser");
 
-// include json files
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const jsonArtifacts = require('./resources/artifacts.json');
-const jsonCharacters = require('./resources/characters.json');
+const jsonArtifacts = require("./resources/artifacts.json");
+const jsonCharacters = require("./resources/characters.json");
 
 const app = express();
 
@@ -13,35 +10,42 @@ const jsonParser = bodyParser.json();
 
 const port = process.env.PORT;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-app.post('/roll', jsonParser, (req, res) => {
-  if (req.body.action !== 'roll') {
-    res.send(
-      {
-        status: 'failed',
+app.post("/roll", jsonParser, (req, res) => {
+  if (req.body.action !== "roll") {
+    res
+      .send({
+        status: "failed",
         code: 422,
-      },
-    ).status(422);
+      })
+      .status(422);
   } else {
     const {
-      artifactLimit, characterLimit, artifacts, characters,
+      artifactLimit,
+      characterLimit,
+      artifacts,
+      characters,
     } = req.body.filters;
 
     // run a map on the full artifact json and then filter to remove the results we don't need.
-    const filteredArtifactsResult = jsonArtifacts.map((artifact) => {
-      if (artifacts && !artifacts.includes(artifact.name)) {
-        return (artifact);
-      }
-    }).filter((e) => e);
+    const filteredArtifactsResult = jsonArtifacts
+      .map((artifact) => {
+        if (artifacts && !artifacts.includes(artifact.name)) {
+          return artifact;
+        }
+      })
+      .filter((e) => e);
 
-    const filteredCharactersResult = jsonCharacters.map((character) => {
-      if (characters && !characters.includes(character.name.toLowerCase())) {
-        return (character);
-      }
-    }).filter((e) => e);
+    const filteredCharactersResult = jsonCharacters
+      .map((character) => {
+        if (characters && !characters.includes(character.name.toLowerCase())) {
+          return character;
+        }
+      })
+      .filter((e) => e);
 
     let artifactFinalResult;
 
@@ -61,7 +65,9 @@ app.post('/roll', jsonParser, (req, res) => {
       const artifactArray = [];
 
       while (artifactArray.length !== artifactFinalLimit) {
-        const choice = Math.floor(Math.random() * Math.floor(filteredArtifactsResult.length));
+        const choice = Math.floor(
+          Math.random() * Math.floor(filteredArtifactsResult.length)
+        );
         if (!artifactArray.includes(filteredArtifactsResult[choice])) {
           // console.log(`Number: ${choice}`);
           // console.log(`pushing ${filteredArtifactsResult[choice].name}`);
@@ -76,10 +82,17 @@ app.post('/roll', jsonParser, (req, res) => {
 
     let characterFinalResult;
 
-    if (characterLimit && filteredCharactersResult.length !== 0 && characterLimit <= 4 && characterLimit > 0) {
+    if (
+      characterLimit &&
+      filteredCharactersResult.length !== 0 &&
+      characterLimit <= 4 &&
+      characterLimit > 0
+    ) {
       const characterArray = [];
       while (characterArray.length !== characterLimit) {
-        const choice = Math.floor(Math.random() * Math.floor(filteredCharactersResult.length));
+        const choice = Math.floor(
+          Math.random() * Math.floor(filteredCharactersResult.length)
+        );
 
         if (!characterArray.includes(filteredCharactersResult[choice])) {
           console.log(`Number: ${choice}`);
@@ -92,16 +105,20 @@ app.post('/roll', jsonParser, (req, res) => {
       characterFinalResult = filteredCharactersResult;
     }
 
-    res.send({
-      status: 'success',
-      results: {
-        artifacts: artifactFinalResult,
-        characters: characterFinalResult,
-      },
-    }).status(200);
+    res
+      .send({
+        status: "success",
+        results: {
+          artifacts: artifactFinalResult,
+          characters: characterFinalResult,
+        },
+      })
+      .status(200);
   }
 });
 
 app.listen(port, () => {
-  console.log(`There are ${jsonArtifacts.length} Artifacts and ${jsonCharacters.length} characters ready to pick from. Running on port ${port}`);
+  console.log(
+    `There are ${jsonArtifacts.length} Artifacts and ${jsonCharacters.length} characters ready to pick from. Running on port ${port}`
+  );
 });

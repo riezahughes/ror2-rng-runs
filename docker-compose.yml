@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  ropapi:
+    hostname: ropapi
+    container_name: riskofpainapi
+    restart: always
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+      args:
+        - PORT=${API_PORT}
+    env_file: .env
+    ports:
+      - 9001:9001

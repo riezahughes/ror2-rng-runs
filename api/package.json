@@ -4,7 +4,7 @@
   "description": "A risk of rain 2 rng thing where you can roll for the kind of run you'll be doing.",
   "main": "./src/server.js",
   "scripts": {
-    "start": "./src/server.js",
+    "start": "node ./src/server.js",
     "test": "jest"
   },
   "repository": {
