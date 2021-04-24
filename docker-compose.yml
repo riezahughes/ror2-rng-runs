@@ -4,11 +4,12 @@ services:
     hostname: ropapi
     container_name: riskofpainapi
     restart: always
+    env_file: .env
     build:
       context: ./api
       dockerfile: Dockerfile
       args:
-        - PORT=${API_PORT}
+        - PORT=${PORT}
     env_file: .env
     ports:
       - 9001:9001
